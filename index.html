@@ -1,139 +1,245 @@
-<section id="o-serwerze">
-    <h2 style="border: none; padding: 0; margin-bottom: 3rem; text-align: center;">
-        Poznaj <span style="color: var(--accent);">Królestwo NPG</span>
-    </h2>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arcadia WL-ON | FiveM RP</title>
 
-    <div class="strefa">
-        <div class="strefa-title"><span>📜</span> Wprowadzenie</div>
-        <p style="opacity: 0.9;">
-            Witaj w świecie, gdzie liczy się współpraca, rozwój i realny wpływ na otoczenie.
-            Królestwo NPG to społeczność budowana przez graczy — dla graczy.
-        </p>
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <div class="strefa">
-        <div class="strefa-title"><span>🏰</span> Czym jest NPG?</div>
-        <p style="opacity: 0.9;">
-            NPG to królestwo nastawione na rozwój gospodarczy, tworzenie infrastruktury oraz realizację ambitnych projektów.
-            Każdy członek ma tutaj znaczenie i może aktywnie wpływać na przyszłość państwa.
-        </p>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            Działamy w ścisłym sojuszu z królestwem PGN, które odpowiada za działania militarne oraz PvP.
-        </p>
-    </div>
+<style>
+:root {
+    --primary: #7289da;
+    --accent: #00d2ff;
+    --bg: #0f0f13;
+    --glass: rgba(255, 255, 255, 0.05);
+    --text: #ffffff;
+}
 
-    <div class="strefa">
-        <div class="strefa-title"><span>⚔️</span> Czy NPG się bije?</div>
-        <p style="opacity: 0.9;">
-            Na co dzień skupiamy się na rozwoju, a nie konflikcie.
-            Jednak w kluczowych momentach:
-        </p>
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>podczas wojen serwerowych</li>
-            <li>w obronie sojuszu</li>
-        </ul>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            ⚠️ NPG zawsze staje u boku PGN i bierze udział w działaniach bojowych.
-        </p>
-    </div>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <div class="strefa">
-        <div class="strefa-title"><span>⚔️</span> Chcesz walczyć?</div>
-        <p style="opacity: 0.9;">
-            Jeśli interesuje Cię PvP:
-        </p>
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>rozpocznij w NPG</li>
-            <li>zdobądź rangę 2</li>
-            <li>złóż wniosek o transfer</li>
-        </ul>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            Po akceptacji trafisz do PGN — królestwa skupionego na walce.
-        </p>
-    </div>
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top right, #1a1a2e, #0f0f13);
+    color: var(--text);
+    overflow-x: hidden;
+}
 
-    <div class="strefa">
-        <div class="strefa-title"><span>🛠️</span> Nie lubisz walki?</div>
-        <p style="opacity: 0.9;">
-            Możesz skupić się na:
-        </p>
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>budowaniu</li>
-            <li>ekonomii</li>
-            <li>projektach</li>
-            <li>organizacji</li>
-        </ul>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            To właśnie gracze tacy jak Ty tworzą fundament NPG.
-        </p>
-    </div>
+/* BLOBS */
+.blob {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    filter: blur(120px);
+    opacity: 0.15;
+    z-index: -1;
+    border-radius: 50%;
+}
+.blob1 { background: var(--primary); top: -100px; left: -100px; }
+.blob2 { background: var(--accent); bottom: -100px; right: -100px; }
 
-    <div class="strefa">
-        <div class="strefa-title"><span>📈</span> System awansów</div>
-        <p style="opacity: 0.9;">
-            Na kanale <strong>#robota</strong> znajdziesz projekty od zarządu.
-        </p>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            Twoim zadaniem jest:
-        </p>
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>zaplanowanie projektu</li>
-            <li>zebranie zespołu</li>
-            <li>realizacja</li>
-        </ul>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            📊 Już przy około 20% wkładu możesz otrzymać awans.
-        </p>
-    </div>
+/* NAV */
+nav {
+    padding: 2rem 10%;
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
 
-    <div class="strefa">
-        <div class="strefa-title"><span>💡</span> Inicjatywa graczy</div>
-        <p style="opacity: 0.9;">
-            Każdy gracz może zaproponować własny projekt.
-        </p>
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>projekt musi mieć sens i cel</li>
-            <li>wymaga akceptacji zarządu NPG oraz PGN</li>
-        </ul>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            Po akceptacji możesz zostać liderem projektu.
-        </p>
-    </div>
+.logo { font-weight: 700; font-size: 1.5rem; }
+.logo span { color: var(--accent); }
 
-    <div class="strefa">
-        <div class="strefa-title"><span>📊</span> Aktywność</div>
-        <p style="opacity: 0.9;">
-            Minimalna aktywność:
-        </p>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            ⏱️ minimum 3 godziny tygodniowo
-        </p>
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            Brak aktywności może skutkować ostrzeżeniem lub usunięciem z królestwa.
-        </p>
-    </div>
+/* HEADER */
+header {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-    <div class="strefa">
-        <div class="strefa-title"><span>🎁</span> Nagrody</div>
-        <p style="opacity: 0.9;">Za aktywność możesz otrzymać:</p>
+    animation: fadeIn 1s ease;
+}
 
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>💰 pieniądze</li>
-            <li>🛠️ narzędzia i wyposażenie</li>
-            <li>✨ enchanty</li>
-        </ul>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity:1; transform: translateY(0);}
+}
 
-        <p style="margin-top: 1rem; opacity: 0.9;">Dodatkowo:</p>
+.launch-badge {
+    background: linear-gradient(90deg, #ff4e50, #f9d423);
+    color: black;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
-        <ul style="margin-top: 1rem; opacity: 0.9; padding-left: 20px;">
-            <li>🏆 premie za projekty</li>
-            <li>📈 bonusy za aktywność</li>
-            <li>👑 nagrody dla liderów</li>
-            <li>🎉 nagrody eventowe</li>
-        </ul>
+h1 { font-size: 3.5rem; margin-bottom: 1rem; }
 
-        <p style="margin-top: 1rem; opacity: 0.9;">
-            👉 Im więcej robisz, tym więcej zyskujesz.
-        </p>
-    </div>
+.hero-btn {
+    padding: 1rem 2.5rem;
+    background: var(--primary);
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(114,137,218,0.5);
+}
+
+/* SECTION */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+.highlight {
+    background: linear-gradient(90deg, #7289da, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* KARTY */
+.strefa {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.4s;
+}
+
+.strefa.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.strefa:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,210,255,0.2);
+}
+
+.strefa-title {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* LISTY */
+ul { padding-left: 20px; margin-top: 10px; }
+li { margin-bottom: 5px; }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 3rem;
+    opacity: 0.5;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    h1 { font-size: 2rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<nav>
+    <div class="logo"><span>ARCADIA WL-ON</span></div>
+</nav>
+
+<header>
+    <div class="launch-badge">🚀 Start: 17.04 | 20:00</div>
+    <h1>Nowy Świat RP</h1>
+    <a href="#" class="hero-btn">DOŁĄCZ</a>
+</header>
+
+<div class="container">
+
+<section>
+<h2 style="text-align:center; margin-bottom:40px;">
+Poznaj <span class="highlight">Królestwo NPG</span>
+</h2>
+
+<div class="strefa">
+<div class="strefa-title">📜 Wprowadzenie</div>
+<p>Tworzymy społeczność opartą na współpracy i rozwoju.</p>
+</div>
+
+<div class="strefa">
+<div class="strefa-title">🏰 Czym jest NPG?</div>
+<p>Królestwo skupione na ekonomii i projektach.</p>
+</div>
+
+<div class="strefa">
+<div class="strefa-title">⚔️ Walki</div>
+<p>Na co dzień nie walczymy — ale w razie potrzeby wchodzimy do akcji.</p>
+</div>
+
+<div class="strefa">
+<div class="strefa-title">⚔️ PvP</div>
+<ul>
+<li>start w NPG</li>
+<li>ranga 2</li>
+<li>transfer do PGN</li>
+</ul>
+</div>
+
+<div class="strefa">
+<div class="strefa-title">🛠️ Alternatywa</div>
+<ul>
+<li>budowanie</li>
+<li>ekonomia</li>
+<li>projekty</li>
+</ul>
+</div>
+
+<div class="strefa">
+<div class="strefa-title">📈 Awans</div>
+<p>~20% wkładu = szansa na rangę</p>
+</div>
+
+<div class="strefa">
+<div class="strefa-title">🎁 Nagrody</div>
+<ul>
+<li>💰 kasa</li>
+<li>🛠️ itemy</li>
+<li>✨ bonusy</li>
+</ul>
+</div>
+
 </section>
+
+</div>
+
+<footer>
+© 2026 Arcadia WL-ON
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if(e.isIntersecting){
+            e.target.classList.add("show");
+        }
+    });
+});
+document.querySelectorAll(".strefa").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
